@@ -1,0 +1,13 @@
+.member-area {
+  margin-bottom: 10px;
+}
+
+.member-avatar {
+  width: 300px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.member-name {
+  margin-top: 10px;
+}
