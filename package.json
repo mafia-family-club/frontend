@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 4200",
+    "start": "webpack-dev-server --inline --progress --port 3000",
     "test": "karma start",
     "build": "webpack --config config/webpack.prod.js --progress --profile --bail",
     "postbuild": "copyfiles Dockerfile build"
