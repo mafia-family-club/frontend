@@ -11,96 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var member_service_1 = require("./member.service");
 var core_1 = require("@angular/core");
-var gender_model_1 = require("./gender.model");
 var MembersListComponent = (function () {
     function MembersListComponent(memberService) {
+        var _this = this;
         this.memberService = memberService;
-        this.members = [
-            {
-                id: 1,
-                name: 'Михаил',
-                surname: 'Зарицкий',
-                gender: gender_model_1.Gender.MALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 2,
-                name: 'Лоли',
-                surname: 'Зарицкая',
-                gender: gender_model_1.Gender.FEMALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 3,
-                name: 'Дановский',
-                surname: 'Игорь',
-                gender: gender_model_1.Gender.MALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 4,
-                name: 'Фиса',
-                surname: 'Лубяная',
-                gender: gender_model_1.Gender.FEMALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 5,
-                name: 'Настя',
-                surname: 'Инкогнито',
-                gender: gender_model_1.Gender.FEMALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 6,
-                name: 'Виталий',
-                surname: 'Тютюник',
-                gender: gender_model_1.Gender.MALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 7,
-                name: 'Дмитрий',
-                surname: 'Бучковский',
-                gender: gender_model_1.Gender.MALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 8,
-                name: 'Алексей',
-                surname: 'Чапурин',
-                gender: gender_model_1.Gender.MALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 9,
-                name: 'Настя',
-                surname: 'Мищенко',
-                gender: gender_model_1.Gender.FEMALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 10,
-                name: 'Наталья',
-                surname: 'Митцукова',
-                gender: gender_model_1.Gender.FEMALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 11,
-                name: 'Виктор',
-                surname: 'Коваленко',
-                gender: gender_model_1.Gender.MALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            },
-            {
-                id: 12,
-                name: 'Дмитрий',
-                surname: 'Артеменко',
-                gender: gender_model_1.Gender.MALE,
-                photo: 'https://findoverwatch.com/images/not-found.png'
-            }
-        ];
+        this.memberService.findAll()
+            .subscribe(function (members) {
+            _this.members = members;
+        });
     }
     MembersListComponent = __decorate([
         core_1.Component({
