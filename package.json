@@ -5,7 +5,6 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 3000",
     "test": "karma start",
-    "prebuild": "npm install",
     "build": "webpack --config config/webpack.prod.js --progress --profile --bail",
     "postbuild": "copyfiles Dockerfile build"
   },
