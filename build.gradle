@@ -1,11 +1,30 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "se.transmode.gradle:gradle-docker:1.2"
+    }
+}
+
 plugins {
     id "com.moowork.node" version "1.2.0"
 }
+
+apply plugin: 'docker'
 
 group = 'mafia-family-club'
 
 task build(type: NpmTask) {
     args = ['run-script', 'build']
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+    tag = "mafiafamilyclub/frontend"
+    stageDir = project.buildDir
+    dockerfile = file('build/Dockerfile')
+
+    push = true
 }
 
 task wrapper(type: Wrapper, dependsOn: npmInstall) {
