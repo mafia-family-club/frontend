@@ -1,0 +1,17 @@
+image: node:alpine
+
+stages:
+  - build
+
+build:
+  stage: build
+  script: npm run-script build
+  artifacts:
+    paths:
+      - npm-debug.log
+    when: on_failure
+    expire_in: 1 month
+  cache:
+    key: node_modules
+    paths:
+      - node_modules/
