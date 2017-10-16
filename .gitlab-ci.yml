@@ -12,7 +12,6 @@ build:
     when: on_failure
     expire_in: 1 month
   cache:
-    key: "$CI_COMMIT_REF_NAME"
-    policy: push
+    key: node_modules
     paths:
-      - node_modules
+      - node_modules/
