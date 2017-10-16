@@ -6,6 +6,10 @@ stages:
 build:
   stage: build
   script: npm run-script build
+  artifacts:
+    paths:
+      - npm-debug.log
+    expire_in: 1 month
   cache:
     key: "$CI_COMMIT_REF_NAME"
     policy: push
